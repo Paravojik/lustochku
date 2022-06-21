@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaves</title>
+    <link rel="icon" href="./img/leaf.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    user-select: none;
+}
+.load__menu{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/bgleaves2.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+.name__load__menu{
+    font-size: 60px;
+    letter-spacing: 5px;
+    color: #faf55f;
+}
+.bot__load__menu{
+    width: 40%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.progress__bar__load__menu{
+    width: 80%;
+    height: 30%;
+    background-color: white;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    display: flex;
+    padding: 1px;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.progress__load__menu{
+    width: 30%;
+    height: 100%;
+    background-color: #faf55f;
+    border-radius: 10px;
+}
+.support__load__menu{
+    width: 70%;
+    height: 30%;
+    color: #141414;
+    text-align: center;
+    background-color: #faf55f;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text__progress__bar{
+position: relative;
+top: 10.75vh;
+font-size: 30px;
+}
+.main__page{
+    width: 100%;
+    height: 180vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #faf55f;
+    padding: 2%;
+    padding-bottom: 0px;
+}
+.top__main__page{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.mid__main__page{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+.bot__main__page{
+    width: 104.2%;
+    height: 95vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+.points{
+min-width: 20%;
+height: 8vh;
+background-color: #f1f1f1;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 5px 15px;
+border-radius: 10px;
+font-size: 28px;
+align-content: center;
+}
+.img__leaf{
+    width: 40px;
+    height: 40px;
+}
+.color__mode{
+    background-color: #f1f1f1;
+    color: #141414;
+
+}
+.center__mid__main__page{
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.img__enemy{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+
+    cursor: pointer;
+    user-select: none;
+    
+}
+.text__hp__bar{
+    min-width: 20%;
+    height: 3vh;
+    font-size: 24px;
+    color: white;
+text-align:center;
+position: absolute;
+margin-top: 5px;
+
+}
+.top__mid__hp{
+    width: 50%;
+    height: 7vh;
+    background-color: rgb(179, 237, 179);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    border-radius: 15px;
+}
+.maid__hp__progress{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(36, 82, 36);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    transition: 1s;
+}
+.top__setting{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position:absolute;
+    top: 25px;
+    right: 25px;
+
+}
+.top__setting__img{
+    width: 50px;
+    height: 50px;
+}
+.open__setting{
+    width: 30%;
+    height: 60vh;
+ 
+ position: fixed;
+ top: 20vh;
+ left: 35%;
+ border-radius: 25px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+padding: 15px 10px;
+z-index: 10;
+border: 1px solid #141414;
+}
+.btn__restart{
+    width: 200px;
+    border: 4px solid #141414;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.nakladka__enemy{
+    position: absolute;
+    width: 30%;
+    height: 60%;
+    z-index: 5;
+}
+.text__Upgrades{
+    font-size: 40px;
+    font-weight: 600;
+}
+.response__upgrades{
+    width: 50%;
+    height: 10vh;
+    border-radius: 25px;
+    background-color: #faf55f;
+    color: #141414;
+    border: 2px solid #141414;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 5px;
+    font-size: 32px;
+    font-weight: 600;
+}
+.btn__createResponse{
+width: 45px;
+height: 45px;
+position: relative;
+cursor: pointer;
+transition: 0.4s;
+}
+.btn__createResponse:hover{
+    
+    width: 50px;
+height: 50px; 
+}
+.response_menu{
+    width: 30%;
+    height: 60vh;
+ 
+ position: fixed;
+ top: 20vh;
+ left: 35%;
+ border-radius: 25px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+padding: 15px 10px;
+z-index: 10;
+border: 1px solid #141414;
+}
+.input__response{
+    width: 70%;
+    height: 15%;
+    font-size: 16px;
+    font-weight: 600;
+resize: none;
+border-radius: 15px;
+outline: none;
+border: 2px solid #141414;
+padding: 5px;
+}
+.input__comment{
+    height: 25%;
+   
+}
+.btn__response{
+    width: 80px;
+    height: 35px;
+     border-radius: 10px;
+     font-size: 18px;
+     border: 0px;
+     background-color: #faf55f;
+     color: #141414;
+     cursor: pointer;
+     
+}
+@media screen and (max-width:900px){
+   
+   .center__mid__main__page{
+    width: 50%;
+   }
+   .bot__load__menu{
+        width: 60%;
+    }
+}
+@media screen and (max-width:600px){
+
+    .response__upgrades{
+        width: 70%;
+    }
+    .top__mid__hp{
+        width: 70%;
+    }
+    .bot__load__menu{
+        width: 75%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="response_menu color__mode">
+        <form class="response_menu"
+        action="https://formspree.io/f/mdobvnpj"
+        method="POST"
+      >
+        
+        
+          <input placeholder="Введи свій Email" class="input__response input__email color__mode" type="email" name="email">
+       
+       
+          <input placeholder="Введи свій пароль" class="input__response input__password color__mode"  type="password" name="message"></input>
+          <textarea placeholder="Напиши коментар" class="input__response input__comment color__mode"  type="text" name="message"></textarea>
+      
+        <button class="btn__response" type="submit">Send</button>
+      </form>
+    </div>
+    <div class="open__setting color__mode">
+<div class="btn__restart color__mode">
+    Restart
+</div>
+    </div>
+    <div class="load__menu" id="load__menu">
+<div class="name__load__menu">LEAVES</div>
+<div class="bot__load__menu">
+    <div class="support__load__menu" id="support__load__menu">dfjgjkdhfgjkhsdkhgjkdfhsgkldjgjkd jghsd gjdfhg dgdfg djg jgnjk ghj</div>
+    <div class="text__progress__bar" id="text__progress__bar">30%</div>
+    <div class="progress__bar__load__menu">
+        <div class="progress__load__menu" id="progress__load__menu"></div>
+    </div>
+</div>    
+    </div>
+    <div class="main__page">
+        <div class="top__main__page">
+            <div class="points color__mode" id="points">
+                <div class="number__points" id="number__points">0</div>
+<img src="./img/leaf.png" class="img__leaf" alt="">
+
+            </div>
+            <div class="top__setting"><img class="top__setting__img" src="./img/settings.png" alt=""></div>   
+        </div>
+        <div class="mid__main__page">
+            <div class="text__hp__bar" id="text__hp__bar">10/10</div>
+<div class="top__mid__hp">
+    <div class="maid__hp__progress" id="maid__hp__progress"></div>
+</div>
+            <div class="center__mid__main__page">
+                <div class="nakladka__enemy"></div>   
+                <div class="img__enemy"><img class="img__enemy" id="img__enemy" src="./img/enemy__1.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="bot__main__page color__mode">
+            <div class="text__Upgrades">Прокачка</div>
+            <div class="response__upgrades">
+Зробити Відгук
+<div class="btn__createResponse"><img class="btn__createResponse" src="./img/response.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <!-- <img class="load__menu"  src="./img/bgleaves1.jpg" alt=""> -->
+    <script>
+let number__points= document.getElementById('number__points')
+let text__hp__bar= document.getElementById('text__hp__bar')
+let maid__hp__progress =  document.getElementById('maid__hp__progress')
+let btn__restart = document.getElementById('btn__restart')
+let img__enemy = document.getElementById('img__enemy')
+let response_menu= document.getElementById('response_menu')
+ 
+let arrOfenemy = [
+'./img/enemy__1.jpg',
+    './img/enemy_1.2.jpg',
+    './img/enemy_2.webp',
+    './img/enemy_3.jpg',
+    './img/enemy_4.jpg',
+    './img/enemy_5.jpg',
+    './img/enemy_6.jpg'
+     
+]
+
+$('.open__setting').toggle(0)
+        let progress=0;
+        let support =[
+            'support 1',
+            'support 2',
+            'support 3',
+            'support 4',
+            'support 5',
+        ]
+        let points__leaves=Number(localStorage.getItem('points__leaves_LS')) || 0 
+   
+        number__points.innerText = points__leaves
+        let getLeaves=1
+        let maxHp=localStorage.getItem('maxHp_LS') || 10
+        let currentHp=localStorage.getItem('currentHp_LS') || 10
+        let hpMultipluer =localStorage.getItem('hpMultipluer_LS') || 1.3
+        let hpMultipluerMultipluer=1.05
+        text__hp__bar.innerText=currentHp+'/'+maxHp
+        maid__hp__progress.style.width=100/(maxHp/currentHp)+'%'
+
+        let countOfenemy=Number(localStorage.getItem('countOfenemy_LS')) || 1
+ 
+        let nextType=Number(localStorage.getItem('nextType_LS')) || 1
+
+        $('.mid__main__page').click(function(){
+            maid__hp__progress.style.transition='1s'
+ points__leaves+=getLeaves
+ number__points.innerText = points__leaves
+ localStorage.setItem('points__leaves_LS',points__leaves)
+ currentHp-=getLeaves
+ localStorage.setItem('currentHp_LS',currentHp) 
+ text__hp__bar.innerText=currentHp+'/'+maxHp
+ maid__hp__progress.style.width=100/(maxHp/currentHp)+'%'
+
+if(countOfenemy==nextType){
+
+
+    img__enemy.src =arrOfenemy[Math.floor((nextType-1)/5)]
+    nextType+=5
+    localStorage.setItem('nextType_LS',nextType)
+}
+
+ if(currentHp<=1){
+    countOfenemy++;
+maxHp=Math.floor(maxHp*hpMultipluer)
+localStorage.setItem('maxHp_LS',maxHp)
+hpMultipluer=hpMultipluer*hpMultipluerMultipluer
+localStorage.setItem('hpMultipluer_LS',hpMultipluer)
+currentHp=maxHp+1
+localStorage.setItem('countOfenemy_LS',countOfenemy)
+
+ }
+ if(currentHp==maxHp){
+
+    maid__hp__progress.style.transition='0s'
+ maid__hp__progress.style.width=100/(maxHp/currentHp)+'%'
+ }
+        })
+        let iterval  = setInterval(function(){
+            if(progress==99){
+                clearInterval(iterval)
+                $('.load__menu').slideToggle(50)
+                $('.main__page').slideToggle(50)
+            }
+            progress++
+            progress__load__menu.style.width = progress+'%'
+            text__progress__bar.innerText=progress+'%'
+        },30)
+        $('.main__page').slideToggle(0)
+        support__load__menu.innerText =support[Math.floor(Math.random()*support.length)]
+        let interval2= setInterval(function(){
+            if(progress>=99){
+                clearInterval(interval2)
+            
+            }
+    
+            support__load__menu.innerText =support[Math.floor(Math.random()*support.length)]
+        },1500)
+        let checkSet=1
+
+        $('.main__page').click(function(){
+            if(checkSet==0){
+                $('.open__setting').hide(10)
+                checkSet=1
+            }
+           
+        })
+        $('.top__setting').click(function(){
+            if(checkSet==1){
+                $('.open__setting').show(10)
+            checkSet=1
+            setTimeout(function(){
+                checkSet=0
+        },301)
+            }
+         
+        })
+
+        $('.response_menu').toggle(0)
+
+
+let checkRes=1
+$('.main__page').click(function(){
+            if(checkRes==0){
+                $('.response_menu').hide(10)
+                checkRes=1
+            }
+           
+        })
+        $('.btn__createResponse').click(function(){
+            if(checkRes==1){
+                $('.response_menu').show(10)
+                checkRes=1
+            setTimeout(function(){
+                checkRes=0
+        },301)
+            }
+         
+        })
+
+$('.btn__response').click(function(){
+    $('.response_menu').hide(10)
+    $('.response__upgrades').toggle(0)
+})
+
+        $('.btn__restart').click(function(){
+            localStorage.setItem('maxHp_LS',10)
+            localStorage.setItem('currentHp_LS',10)
+            localStorage.setItem('hpMultipluer_LS',1.3)
+            localStorage.setItem('points__leaves_LS',0)
+            localStorage.setItem('countOfenemy_LS',1)
+            localStorage.setItem('nextType_LS',1)
+
+             maxHp=localStorage.getItem('maxHp_LS') || 10
+         currentHp=localStorage.getItem('currentHp_LS') || 10
+         hpMultipluer =localStorage.getItem('hpMultipluer_LS') || 1.3
+         points__leaves=Number(localStorage.getItem('points__leaves_LS')) || 0 
+         countOfenemy=Number(localStorage.getItem('countOfenemy_LS')) || 1
+         nextType=Number(localStorage.getItem('nextType_LS')) || 1
+
+         text__hp__bar.innerText=currentHp+'/'+maxHp
+        maid__hp__progress.style.width=100/(maxHp/currentHp)+'%'
+        number__points.innerText = points__leaves
+
+        if(countOfenemy==nextType){
+
+
+img__enemy.src =arrOfenemy[Math.floor((nextType-1)/5)]
+nextType+=5
+localStorage.setItem('nextType_LS',nextType)
+}
+        })
+    </script>
+</body>
+</html>
