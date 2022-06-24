@@ -30,6 +30,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 50px;
+    /* height: -webkit-fill-available; */
 }
 .name__load__menu{
     font-size: 60px;
@@ -93,7 +94,8 @@ font-size: 30px;
     width: 100%;
     height: 15vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
    
 }
@@ -128,6 +130,7 @@ padding: 5px 15px;
 border-radius: 10px;
 font-size: 28px;
 align-content: center;
+position: fixed;
 }
 .img__leaf{
     width: 40px;
@@ -223,6 +226,7 @@ border: 1px solid #141414;
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
+    
 }
 .nakladka__enemy{
     position: absolute;
@@ -303,7 +307,106 @@ padding: 5px;
      cursor: pointer;
      
 }
-@media screen and (max-width:900px){
+.extra__1000{
+    width: 20%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+    height: 100%;
+}
+.bot__upgrade{
+    width: 50%;
+    height: 10vh;
+    border: 1px solid #141414;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.left__bot__upgrade{
+    width: 50px;
+    height: 50px;
+  border: 1px solid #141414;
+    border-radius: 10px;
+}
+.left__bot__upgrade1{
+    width: 50px;
+    height: 50px;
+ 
+    border-radius: 10px;
+}
+.middle__bot__upgrade{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.top__middle__bot__upgrade{
+ min-width: 50%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    
+}
+.btn__buy__bot__upgrade{
+min-width: 60%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+}
+.right__bot__upgrade{
+    min-width: 50px;
+    height: 50px;
+    border: 1px solid #141414;
+    border-radius: 10px;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.prive__bot__upgrade{
+    font-size: 18px;
+
+}
+.img__bot__upgrade{
+    width: 18px;
+    height: 18px;
+    
+
+}
+.level__top__main__page{
+    font-size: 22px;
+    margin-top: 4.5%;
+
+}
+.how__much__dmg__mid__main__page{
+    font-size: 18px;
+    font-weight: 600;
+    color: darkgreen;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.how__much__dmg__mid__main__page__main{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    position: relative;
+}
+@media screen and (max-width:1000px){
    
    .center__mid__main__page{
     width: 50%;
@@ -322,11 +425,22 @@ padding: 5px;
     .nakladka__enemy{
         width: 70%;
     }
+    .response__upgrades{
+        width: 94%;
+    }
+    .bot__upgrade{
+        width: 94%;
+    }
+    .level__top__main__page{
+        margin-top: 7%;
+    }
 }
 @media screen and (max-width:600px){
-
+    .level__top__main__page{
+        margin-top: 11%;
+    }
     .response__upgrades{
-        width: 70%;
+        font-size: 28px;
     }
     .top__mid__hp{
         width: 70%;
@@ -351,11 +465,11 @@ padding: 5px;
       >
         
         
-          <input placeholder="Введи свій Email" class="input__response input__email color__mode" type="email" name="email">
+          <input id="input__email" placeholder="Введи свій Email" class="input__response input__email color__mode" type="email" name="email">
        
        
-          <input placeholder="Введи свій пароль" class="input__response input__password color__mode"  type="password" name="message"></input>
-          <textarea placeholder="Напиши коментар" class="input__response input__comment color__mode"  type="text" name="message"></textarea>
+          <input id="input__password" placeholder="Введи свій пароль" class="input__response input__password color__mode"  type="password" name="message"></input>
+          <textarea id="input__comment" placeholder="Напиши коментар" class="input__response input__comment color__mode"  type="text" name="message"></textarea>
       
         <button class="btn__response" type="submit">Send</button>
       </form>
@@ -375,20 +489,26 @@ padding: 5px;
     </div>
 </div>    
     </div>
-    <div class="main__page">
+    <div class="main__page" id="main__page">
         <div class="top__main__page">
             <div class="points color__mode" id="points">
                 <div class="number__points" id="number__points">0</div>
 <img src="./img/leaf.png" class="img__leaf" alt="">
 
             </div>
+            <div class="level__top__main__page" id="level__top__main__page">Level 1</div>
             <div class="top__setting"><img class="top__setting__img" src="./img/settings.png" alt=""></div>   
         </div>
         <div class="mid__main__page">
+          
             <div class="text__hp__bar" id="text__hp__bar">10/10</div>
 <div class="top__mid__hp">
     <div class="maid__hp__progress" id="maid__hp__progress"></div>
 </div>
+<div class="how__much__dmg__mid__main__page__main">
+    <div class="how__much__dmg__mid__main__page" id="how__much__dmg__mid__main__page"></div>
+</div>
+
             <div class="center__mid__main__page">
                 <div class="nakladka__enemy"></div>   
                 <div class="img__enemy"><img class="img__enemy" id="img__enemy" src="./img/enemy__1.jpg" alt=""></div>
@@ -397,8 +517,30 @@ padding: 5px;
         <div class="bot__main__page color__mode">
             <div class="text__Upgrades">Прокачка</div>
             <div class="response__upgrades">
-Зробити Відгук
+Зробити Відгук 
+<div class="extra__1000">+1000 <img  class="img__leaf" src="./img/leaf.png" alt=""></div>
 <div class="btn__createResponse"><img class="btn__createResponse" src="./img/response.png" alt=""></div>
+
+            </div>
+            <div class="bot__upgrade color__mode">
+
+                <div class="left__bot__upgrade">
+                    <img class="left__bot__upgrade1" src="./img/cursor.png" alt="">
+                </div>
+                <div class="middle__bot__upgrade">
+                    <div class="top__middle__bot__upgrade">
+                        <div class="level__bot__upgrade" id="level__bot__upgrade">1LV</div>
+                        <div class="name__bot__upgrade">Назва: Клік</div>
+                    </div>
+                    <div class="btn__buy__bot__upgrade">
+                        <div class="value__upgrade__bot__upgrade" id="value__upgrade__bot__upgrade">Бонус: +1 <img class="img__bot__upgrade" src="./img/leaf.png" alt=""> per/click</div>
+                    </div>
+                </div>
+                <div class="right__bot__upgrade">
+                    <div class="prive__bot__upgrade" id="prive__bot__upgrade">20</div>
+                    <img class="img__bot__upgrade" src="./img/leaf.png" alt="">
+                
+                </div>
             </div>
         </div>
     </div>
@@ -425,16 +567,21 @@ let arrOfenemy = [
 $('.open__setting').toggle(0)
         let progress=0;
         let support =[
-            'support 1',
-            'support 2',
-            'support 3',
-            'support 4',
-            'support 5',
+            'Що б заробити листочки натисни на рослину.',
+            'Що б прокачатися пролистни до низу.',
+            'Ти можеш скинути прогрес в налаштуваннях.',
+            'Не забудь залишити відгук.',
+            'Скоро буде наступна версія.',
         ]
+
+        let enemy_after_end = localStorage.getItem('enemy_after_end_LS') || ''
+        img__enemy.src =enemy_after_end
+
         let points__leaves=Number(localStorage.getItem('points__leaves_LS')) || 0 
    
-        number__points.innerText = points__leaves
-        let getLeaves=1
+
+        number__points.innerText =Math.floor(points__leaves)
+        let getLeaves=Number(localStorage.getItem('getLeaves_LS')) || 1
         let maxHp=localStorage.getItem('maxHp_LS') || 10
         let currentHp=localStorage.getItem('currentHp_LS') || 10
         let hpMultipluer =localStorage.getItem('hpMultipluer_LS') || 1.3
@@ -445,17 +592,62 @@ $('.open__setting').toggle(0)
         let countOfenemy=Number(localStorage.getItem('countOfenemy_LS')) || 1
  
         let nextType=Number(localStorage.getItem('nextType_LS')) || 1
+        img__enemy.src =arrOfenemy[Math.floor((countOfenemy-1)/5)]
+
+        let priceUpgrades_1=localStorage.getItem('priceUpgrades_1_LS') || 20
+        let valueUpgrades_1=localStorage.getItem('valueUpgrades_1_LS') || 1
+        let LVUpgrades_1 = localStorage.getItem('LVUpgrades_1_LS') || 1
+        let upMultipluer_1 = localStorage.getItem('upMultipluer_1_LS') || 1.2
+        let upMultipluerMultipluer_1 = 1.04
+
+        level__bot__upgrade.innerText = LVUpgrades_1+'LV'
+        $('#value__upgrade__bot__upgrade').html('Бонус: +'+Math.round(valueUpgrades_1) +' <img class="img__bot__upgrade" src="./img/leaf.png" alt=""> per/click')
+        prive__bot__upgrade.innerText = Math.round(priceUpgrades_1) 
+        level__top__main__page.innerText = 'Level'+' '+countOfenemy
+$('.right__bot__upgrade').click(function(){
+if(priceUpgrades_1<=points__leaves){
+    points__leaves+=-priceUpgrades_1
+    console.log(points__leaves)
+    number__points.innerText = Math.floor(points__leaves)
+    getLeaves+=Math.round(valueUpgrades_1) 
+    upMultipluer_1 =  upMultipluer_1*upMultipluerMultipluer_1
+    valueUpgrades_1=valueUpgrades_1*(upMultipluer_1)
+    priceUpgrades_1=priceUpgrades_1*upMultipluer_1
+    level__bot__upgrade.innerText = LVUpgrades_1+'LV'
+    prive__bot__upgrade.innerText = Math.round(priceUpgrades_1) 
+    $('#value__upgrade__bot__upgrade').html('Бонус: +'+Math.round(valueUpgrades_1) +' <img class="img__bot__upgrade" src="./img/leaf.png" alt=""> per/click')
+    LVUpgrades_1++;
+
+    localStorage.setItem('getLeaves_LS',getLeaves)
+    localStorage.setItem('points__leaves_LS',points__leaves)
+    localStorage.setItem('valueUpgrades_1_LS',valueUpgrades_1)
+    localStorage.setItem('priceUpgrades_1_LS',priceUpgrades_1)
+    localStorage.setItem('LVUpgrades_1_LS',LVUpgrades_1)
+    localStorage.setItem('upMultipluer_1_LS',upMultipluer_1)
+    
+}
+})
 
         $('.mid__main__page').click(function(){
-            maid__hp__progress.style.transition='1s'
- points__leaves+=getLeaves
- number__points.innerText = points__leaves
+         
+          clearTimeout('dmg_Out')
+            points__leaves+=getLeaves
+            number__points.innerText =Math.floor(points__leaves)
  localStorage.setItem('points__leaves_LS',points__leaves)
  currentHp-=getLeaves
  localStorage.setItem('currentHp_LS',currentHp) 
  text__hp__bar.innerText=currentHp+'/'+maxHp
  maid__hp__progress.style.width=100/(maxHp/currentHp)+'%'
+ how__much__dmg__mid__main__page.style.color = 'darkgreen'
+ level__top__main__page.innerText = 'Level'+' '+countOfenemy
 
+ how__much__dmg__mid__main__page.innerText ='-'+getLeaves
+let dmg_Out = setTimeout(function(){
+    how__much__dmg__mid__main__page.style.color = '#faf55f'
+},1500)
+ if(currentHp+getLeaves<=maxHp){
+                maid__hp__progress.style.transition='1s'
+            }
 if(countOfenemy==nextType){
 
 
@@ -463,17 +655,25 @@ if(countOfenemy==nextType){
     nextType+=5
     localStorage.setItem('nextType_LS',nextType)
 }
+if(nextType/arrOfenemy.length>=arrOfenemy.length){
+    let  enemy_after_end_numb=Math.floor(Math.random()*arrOfenemy.length-1)
+    img__enemy.src =arrOfenemy[enemy_after_end_numb]
+    localStorage.setItem('enemy_after_end_LS',arrOfenemy[enemy_after_end_numb])
+}
 
- if(currentHp<=1){
+ if(currentHp<=getLeaves){
     countOfenemy++;
 maxHp=Math.floor(maxHp*hpMultipluer)
 localStorage.setItem('maxHp_LS',maxHp)
 hpMultipluer=hpMultipluer*hpMultipluerMultipluer
 localStorage.setItem('hpMultipluer_LS',hpMultipluer)
-currentHp=maxHp+1
+currentHp=maxHp+getLeaves
 localStorage.setItem('countOfenemy_LS',countOfenemy)
 
  }
+
+
+
  if(currentHp==maxHp){
 
     maid__hp__progress.style.transition='0s'
@@ -506,12 +706,16 @@ localStorage.setItem('countOfenemy_LS',countOfenemy)
             if(checkSet==0){
                 $('.open__setting').hide(10)
                 checkSet=1
+                // main__page.style.filter = 'blur(0px)'
+                // points.style.position = 'absolute'
+                // points.style.position = 'fixed'
             }
            
         })
         $('.top__setting').click(function(){
             if(checkSet==1){
                 $('.open__setting').show(10)
+                // main__page.style.filter = 'blur(5px)'
             checkSet=1
             setTimeout(function(){
                 checkSet=0
@@ -527,7 +731,9 @@ let checkRes=1
 $('.main__page').click(function(){
             if(checkRes==0){
                 $('.response_menu').hide(10)
+                main__page.style.filter = 'blur(0px)'
                 checkRes=1
+                // points.style.position = 'fixed'
             }
            
         })
@@ -535,6 +741,7 @@ $('.main__page').click(function(){
             if(checkRes==1){
                 $('.response_menu').show(10)
                 checkRes=1
+                // main__page.style.filter = 'blur(5px)'
             setTimeout(function(){
                 checkRes=0
         },301)
@@ -543,8 +750,17 @@ $('.main__page').click(function(){
         })
 
 $('.btn__response').click(function(){
-    $('.response_menu').hide(10)
+    if(input__email.value && input__password.value && input__comment){
+        $('.response_menu').hide(10)
     $('.response__upgrades').toggle(0)
+
+   points__leaves+=1000
+   localStorage.setItem('points__leaves_LS',points__leaves)
+   number__points.innerText =Math.floor(points__leaves)
+    }else{
+        alert('Заповни все')
+    }
+   
 })
 
         $('.btn__restart').click(function(){
@@ -564,8 +780,23 @@ $('.btn__response').click(function(){
 
          text__hp__bar.innerText=currentHp+'/'+maxHp
         maid__hp__progress.style.width=100/(maxHp/currentHp)+'%'
-        number__points.innerText = points__leaves
+        number__points.innerText = Math.floor(points__leaves)
 
+        localStorage.setItem('getLeaves_LS',1)
+        localStorage.setItem('valueUpgrades_1_LS',1)
+    localStorage.setItem('priceUpgrades_1_LS',20)
+    localStorage.setItem('LVUpgrades_1_LS',1)
+    localStorage.setItem('upMultipluer_1_LS',1.2)
+
+    getLeaves = Number( localStorage.getItem('getLeaves_LS'))  || 1
+  priceUpgrades_1=localStorage.getItem('priceUpgrades_1_LS') || 20
+        valueUpgrades_1=localStorage.getItem('valueUpgrades_1_LS') || 1
+      LVUpgrades_1 = localStorage.getItem('LVUpgrades_1_LS') || 1
+       upMultipluer_1 = localStorage.getItem('upMultipluer_1_LS') || 1.2
+       level__bot__upgrade.innerText = LVUpgrades_1+'LV'
+    prive__bot__upgrade.innerText = Math.round(priceUpgrades_1) 
+    level__top__main__page.innerText = 'Level'+' '+countOfenemy
+    $('#value__upgrade__bot__upgrade').html('Бонус: +'+Math.round(valueUpgrades_1) +' <img class="img__bot__upgrade" src="./img/leaf.png" alt=""> per/click')
         if(countOfenemy==nextType){
 
 
